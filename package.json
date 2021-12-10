@@ -1,8 +1,7 @@
 {
-  "name": "Zenix",
+  "name": "moralis-hackathlon",
   "version": "0.1.0",
   "homepage": "https://quinn-eschenbach.github.io/avalanche-moralis",
-  "private": true,
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
     "@fullcalendar/core": "^5.4.0",

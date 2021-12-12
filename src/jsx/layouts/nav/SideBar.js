@@ -42,15 +42,15 @@ const SideBar = () => {
       return aaa.classList.toggle("menu-toggle");
     }
     btn.addEventListener("click", toggleFunc);
-	
-	//sidebar icon Heart blast
-	var handleheartBlast = document.querySelector('.heart');
-        function heartBlast() {
-            return handleheartBlast.classList.toggle("heart-blast");
-        }
 
-        handleheartBlast.addEventListener('click', heartBlast);
-	
+    //sidebar icon Heart blast
+    var handleheartBlast = document.querySelector('.heart');
+    function heartBlast() {
+      return handleheartBlast.classList.toggle("heart-blast");
+    }
+
+    // handleheartBlast.addEventListener('click', heartBlast);
+
   }, []);
   let scrollPosition = useScrollPosition();
   /// Path
@@ -59,13 +59,13 @@ const SideBar = () => {
   path = path[path.length - 1];
   /// Active menu
   let deshBoard = [
-      "",
-      "my-wallets",
-      "transactions",
-      "coin-details",
-      "portofolio",
-      "market-capital",
-    ],
+    "",
+    "my-wallets",
+    "transactions",
+    "coin-details",
+    "portofolio",
+    "market-capital",
+  ],
     app = [
       "app-profile",
       "post-details",
@@ -129,11 +129,11 @@ const SideBar = () => {
       "map-jqvmap",
       "uc-lightgallery",
     ],
-	redux = [
-		"todo",
-		"form-redux",
-		"form-redux-wizard", 
-	],
+    redux = [
+      "todo",
+      "form-redux",
+      "form-redux-wizard",
+    ],
     widget = ["widget-basic"],
     forms = [
       "form-element",
@@ -143,11 +143,11 @@ const SideBar = () => {
       "form-validation-jquery",
     ],
     table = [
-		"table-bootstrap-basic",
-		"table-datatable-basic",
-		"table-sorting",
-        "table-filtering",
-	],
+      "table-bootstrap-basic",
+      "table-datatable-basic",
+      "table-sorting",
+      "table-filtering",
+    ],
     pages = [
       "page-register",
       "page-login",
@@ -167,23 +167,22 @@ const SideBar = () => {
     ];
   return (
     <div
-      className={`deznav ${iconHover} ${
-        sidebarposition.value === "fixed" &&
+      className={`deznav ${iconHover} ${sidebarposition.value === "fixed" &&
         sidebarLayout.value === "horizontal" &&
         headerposition.value === "static"
-          ? scrollPosition > 120
-            ? "fixed"
-            : ""
+        ? scrollPosition > 120
+          ? "fixed"
           : ""
-      }`}
+        : ""
+        }`}
     >
       <PerfectScrollbar className="deznav-scroll">
-		<div className="main-profile">
-			<img src={profile} alt="" />
-			<Link to={"#"}><i className="fa fa-cog" aria-hidden="true"></i></Link>
-			<h5 className="mb-0 fs-20 text-black "><span className="font-w400">Hello,</span> Marquez</h5>
-			<p className="mb-0 fs-14 font-w400">marquezzzz@mail.com</p>
-		</div>
+        <div className="main-profile">
+          <img src={profile} alt="" />
+          <Link to={"#"}><i className="fa fa-cog" aria-hidden="true"></i></Link>
+          <h5 className="mb-0 fs-20 text-black "><span className="font-w400">Hello,</span> Marquez</h5>
+          <p className="mb-0 fs-14 font-w400">marquezzzz@mail.com</p>
+        </div>
         <MM className="metismenu" id="menu">
           <li className={`${deshBoard.includes(path) ? "mm-active" : ""}`}>
             <Link className="has-arrow ai-icon" to="#" >
@@ -192,9 +191,9 @@ const SideBar = () => {
             </Link>
             <ul >
               <li><Link className={`${path === "" ? "mm-active" : ""}`} to="/">  Dashboard </Link></li>
-			  <li><Link className={`${path === "wallet" ? "mm-active" : ""}`} to="/my-wallets">Wallet</Link></li>
+              <li><Link className={`${path === "wallet" ? "mm-active" : ""}`} to="/my-wallets">Wallet</Link></li>
               <li><Link className={`${path === "transactions" ? "mm-active" : ""}`} to="/transactions"> Transactions</Link></li>
-			  <li><Link className={`${path === "coin-details" ? "mm-active" : ""}`} to="/coin-details"> Coin Details</Link> </li>
+              <li><Link className={`${path === "coin-details" ? "mm-active" : ""}`} to="/coin-details"> Coin Details</Link> </li>
               <li><Link className={`${path === "portofolio" ? "mm-active" : ""}`} to="/portofolio">Portofolio</Link></li>
               <li><Link className={`${path === "market-capital" ? "mm-active" : ""}`} to="/market-capital">Market Capital</Link></li>
             </ul>
@@ -206,7 +205,7 @@ const SideBar = () => {
             </Link>
             <ul >
               <li><Link className={`${path === "app-profile" ? "mm-active" : ""}`} to="/app-profile">Profile</Link></li>
-              <li><Link className={`${path === "post-details" ? "mm-active" : ""}`} to="/post-details">Post Details</Link></li>
+              {/* <li><Link className={`${path === "post-details" ? "mm-active" : ""}`} to="/post-details">Post Details</Link></li>
               <li className={`${email.includes(path) ? "mm-active" : ""}`}><Link className="has-arrow" to="#" >Email</Link>
                 <ul  className={`${email.includes(path) ? "mm-show" : ""}`}>
                   <li><Link className={`${ path === "email-compose" ? "mm-active" : ""}`} to="/email-compose">Compose</Link></li>
@@ -225,10 +224,10 @@ const SideBar = () => {
                   <li><Link className={`${ path === "ecom-invoice" ? "mm-active" : "" }`} to="/ecom-invoice">Invoice</Link></li>
                   <li><Link className={`${ path === "ecom-customers" ? "mm-active" : "" }`} to="/ecom-customers">Customers</Link></li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </li>
-          <li className={`${charts.includes(path) ? "mm-active" : ""}`}>
+          {/* <li className={`${charts.includes(path) ? "mm-active" : ""}`}>
             <Link className="has-arrow ai-icon" to="#" >
               <i className="flaticon-061-puzzle"></i>
               <span className="nav-text">Charts</span>
@@ -421,9 +420,9 @@ const SideBar = () => {
             </ul>
           </li>
           <li className={`${plugins.includes(path) ? "mm-active" : ""}`}>
-				<Link className="has-arrow ai-icon" to="#" >
-					<i className="flaticon-053-heart"></i><span className="nav-text">Plugins</span>
-				</Link>
+            <Link className="has-arrow ai-icon" to="#" >
+              <i className="flaticon-053-heart"></i><span className="nav-text">Plugins</span>
+            </Link>
             <ul >
               <li><Link className={`${path === "uc-select2" ? "mm-active" : ""}`} to="/uc-select2">Select 2</Link></li>
               <li><Link className={`${path === "uc-nestable" ? "mm-active" : ""}`} to="/uc-nestable">Nestedable</Link></li>
@@ -434,16 +433,16 @@ const SideBar = () => {
               <li><Link className={`${path === "uc-lightgallery" ? "mm-active" : ""}`} to="/uc-lightgallery">Light Gallery</Link></li>
             </ul>
           </li>
-			<li className={`${redux.includes(path) ? "mm-active" : ""}`}>
-				<Link className="has-arrow ai-icon" to="#" >
-					<i className="flaticon-381-book"></i><span className="nav-text">Redux</span>
-				</Link>
-				<ul>
-					<li><Link className={`${path === "todo" ? "mm-active" : ""}`} to="/todo">Todo</Link></li> 
-					<li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/form-redux">Redux Form</Link></li>
-					<li><Link className={`${path === "form-redux-wizard" ? "mm-active" : ""}`} to="/form-redux-wizard">Wizard Form</Link></li>
-				</ul>
-			</li> 
+          <li className={`${redux.includes(path) ? "mm-active" : ""}`}>
+            <Link className="has-arrow ai-icon" to="#" >
+              <i className="flaticon-381-book"></i><span className="nav-text">Redux</span>
+            </Link>
+            <ul>
+              <li><Link className={`${path === "todo" ? "mm-active" : ""}`} to="/todo">Todo</Link></li>
+              <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/form-redux">Redux Form</Link></li>
+              <li><Link className={`${path === "form-redux-wizard" ? "mm-active" : ""}`} to="/form-redux-wizard">Wizard Form</Link></li>
+            </ul>
+          </li>
           <li className={`${widget.includes(path) ? "mm-active" : ""}`}>
             <Link to="widget-basic" className="ai-icon" >
               <i className="flaticon-381-settings-2"></i>
@@ -474,9 +473,8 @@ const SideBar = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    path === "form-editor-summernote" ? "mm-active" : ""
-                  }`}
+                  className={`${path === "form-editor-summernote" ? "mm-active" : ""
+                    }`}
                   to="/form-editor-summernote"
                 >
                   Summernote
@@ -492,9 +490,8 @@ const SideBar = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    path === "form-validation-jquery" ? "mm-active" : ""
-                  }`}
+                  className={`${path === "form-validation-jquery" ? "mm-active" : ""
+                    }`}
                   to="/form-validation-jquery"
                 >
                   Jquery Validate
@@ -502,33 +499,33 @@ const SideBar = () => {
               </li>
             </ul>
           </li>
-			<li className={`${table.includes(path) ? "mm-active" : ""}`}>
-				<Link className="has-arrow ai-icon" to="#" >
-					<i className="flaticon-381-network"></i><span className="nav-text">Table</span>
-				</Link>
-				<ul>
-					<li>
-						<Link className={`${ path === "table-bootstrap-basic" ? "mm-active" : "" }`} to="/table-bootstrap-basic">
-							Bootstrap
-						</Link>
-					</li>
-					<li> 
-						<Link className={`${ path === "table-datatable-basic" ? "mm-active" : ""}`} to="/table-datatable-basic">
-							Datatable
-						</Link>
-					</li>
-				   <li>
-						<Link className={`${ path === "table-filtering" ? "mm-active" : "" }`}  to="/table-filtering">
-							Table Filtering
-						</Link>
-					</li>
-					<li>
-						<Link className={`${ path === "table-sorting" ? "mm-active" : "" }`}  to="/table-sorting">
-							Table Sorting
-						</Link>
-					</li>
-				</ul>
-			</li>
+          <li className={`${table.includes(path) ? "mm-active" : ""}`}>
+            <Link className="has-arrow ai-icon" to="#" >
+              <i className="flaticon-381-network"></i><span className="nav-text">Table</span>
+            </Link>
+            <ul>
+              <li>
+                <Link className={`${path === "table-bootstrap-basic" ? "mm-active" : ""}`} to="/table-bootstrap-basic">
+                  Bootstrap
+                </Link>
+              </li>
+              <li>
+                <Link className={`${path === "table-datatable-basic" ? "mm-active" : ""}`} to="/table-datatable-basic">
+                  Datatable
+                </Link>
+              </li>
+              <li>
+                <Link className={`${path === "table-filtering" ? "mm-active" : ""}`} to="/table-filtering">
+                  Table Filtering
+                </Link>
+              </li>
+              <li>
+                <Link className={`${path === "table-sorting" ? "mm-active" : ""}`} to="/table-sorting">
+                  Table Sorting
+                </Link>
+              </li>
+            </ul>
+          </li>
           <li className={`${pages.includes(path) ? "mm-active" : ""}`}>
             <Link className="has-arrow ai-icon" to="#" >
               <i className="flaticon-049-copy"></i>
@@ -548,9 +545,8 @@ const SideBar = () => {
                 <ul >
                   <li>
                     <Link
-                      className={`${
-                        path === "page-error-400" ? "mm-active" : ""
-                      }`}
+                      className={`${path === "page-error-400" ? "mm-active" : ""
+                        }`}
                       to="/page-error-400"
                     >
                       Error 400
@@ -558,9 +554,8 @@ const SideBar = () => {
                   </li>
                   <li>
                     <Link
-                      className={`${
-                        path === "page-error-403" ? "mm-active" : ""
-                      }`}
+                      className={`${path === "page-error-403" ? "mm-active" : ""
+                        }`}
                       to="/page-error-403"
                     >
                       Error 403
@@ -568,9 +563,8 @@ const SideBar = () => {
                   </li>
                   <li>
                     <Link
-                      className={`${
-                        path === "page-error-404" ? "mm-active" : ""
-                      }`}
+                      className={`${path === "page-error-404" ? "mm-active" : ""
+                        }`}
                       to="/page-error-404"
                     >
                       Error 404
@@ -578,9 +572,8 @@ const SideBar = () => {
                   </li>
                   <li>
                     <Link
-                      className={`${
-                        path === "page-error-500" ? "mm-active" : ""
-                      }`}
+                      className={`${path === "page-error-500" ? "mm-active" : ""
+                        }`}
                       to="/page-error-500"
                     >
                       Error 500
@@ -588,9 +581,8 @@ const SideBar = () => {
                   </li>
                   <li>
                     <Link
-                      className={`${
-                        path === "page-error-503" ? "mm-active" : ""
-                      }`}
+                      className={`${path === "page-error-503" ? "mm-active" : ""
+                        }`}
                       to="/page-error-503"
                     >
                       Error 503
@@ -600,21 +592,20 @@ const SideBar = () => {
               </li>
               <li>
                 <Link
-                  className={`${
-                    path === "page-lock-screen" ? "mm-active" : ""
-                  }`}
+                  className={`${path === "page-lock-screen" ? "mm-active" : ""
+                    }`}
                   to="/page-lock-screen"
                 >
                   Lock Screen
                 </Link>
               </li>
             </ul>
-          </li>
+          </li> */}
         </MM>
-		<div className="copyright">
-			<p><strong>Zenix Crypto React Admin Dashboard</strong> © 2021 All Rights Reserved</p>
-			<p className="fs-12">Made with <span className="heart"></span> by DexignZone</p>
-		</div>
+        {/* <div className="copyright">
+          <p><strong>Zenix Crypto React Admin Dashboard</strong> © 2021 All Rights Reserved</p>
+          <p className="fs-12">Made with <span className="heart"></span> by DexignZone</p>
+        </div> */}
       </PerfectScrollbar>
     </div>
   );
